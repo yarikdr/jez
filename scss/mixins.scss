@@ -1,0 +1,42 @@
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    #{$property}: $startSize + px;
+    @media (max-width: #{$containerWidth + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px)) / #{$containerWidth - 320});
+    }
+  } @else if $type==2 {
+    #{$property}: $startSize + px;
+    @media (min-width: #{$containerWidth + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px)) / #{$maxWidth - 320});
+    }
+  } @else {
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px)) / #{$maxWidth - 320});
+  }
+}
+
+@function rem($size) {
+  $remSize: calc($size / $root-font-size);
+  @return $remSize * 1rem;
+}
+
+@mixin hoverUnderline($color) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color;
+    transform: scale(0);
+    transition: transform 0.3s ease 0s;
+  }
+
+  &:hover {
+    &:after {
+      transform: scale(1);      
+    }
+  }
+}
