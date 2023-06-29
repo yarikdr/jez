@@ -179,7 +179,7 @@ body, * {
   }
 
   &__description {
-    color: #828282;
+    color: $lightGrey;
     font-size: 20px;
     font-weight: 500;
     line-height: 160%;
@@ -195,7 +195,7 @@ body, * {
     display: flex;
     gap: 52px;
     & > * {
-      color: #828282;
+      color: $lightGrey;
       font-weight: 500;
       line-height: 160%;
       span {
