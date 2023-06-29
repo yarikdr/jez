@@ -1,3 +1,11 @@
+@media (max-width: 1440px) {
+  .intro {
+    &__content {
+      flex-shrink: 1;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .header {
     &__inner {
@@ -8,6 +16,7 @@
       justify-self: end;
     }
   }
+
   .menu {
     &.active {
       left: 0;
@@ -58,6 +67,27 @@
     right: 0;
     top: 0;
   }
+
+  .intro {
+    &::before {
+      filter: blur(250px);
+    }
+    &__inner {
+      flex-wrap: wrap-reverse;
+      gap: 30px;
+    }
+
+    &__btn {
+      align-self: center;
+      margin-bottom: 10px;
+    }
+
+    &__statistic {
+      gap: 0px;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 425px) {
@@ -69,5 +99,16 @@
 
   .menu {
     width: 100%;
+  }
+
+  .intro {
+    &::before {
+      filter: blur(180px);
+    }
+    &__statistic {
+      gap: 0px;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 }

@@ -15,7 +15,6 @@ body, * {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
   height: 100%;
-  overflow: hidden;
 }
 
 .container {
@@ -26,6 +25,7 @@ body, * {
 }
 
 .orange {
+  font-size: inherit;
   color: $orange;
 }
 
@@ -132,5 +132,94 @@ body, * {
     }
   }
 }
+
+.intro {
+  margin-top: 168px;
+  &::before {
+    content: '';
+    width: 45%;
+    height: 520px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $orange;
+    border-bottom-left-radius: 50%; 
+    z-index: -1;
+    filter: blur(300px)
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &__content {
+    flex: 1 0 590px;
+    gap: 30px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  &__label {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 130%;
+    color: $orange;
+    border-radius: 100px;
+    background-color: $paleOrange;
+  }
+
+  &__title {
+    color: $grey;
+    // font-size: 72px;
+    font-size: clamp(50px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -1.44px;
+  }
+
+  &__description {
+    color: #828282;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: -0.4px;
+  }
+
+  &__btn {
+    padding: 23px 46px;
+    margin-bottom: 58px;
+  }
+
+  &__statistic {
+    display: flex;
+    gap: 52px;
+    & > * {
+      color: #828282;
+      font-weight: 500;
+      line-height: 160%;
+      span {
+        display: block;
+        color: $grey;
+        font-size: 24px;
+        line-height: 160%;
+      }
+    }
+  }
+
+  // &__customer {}
+
+  // &__delivery {}
+
+  // &__ratings {}
+
+  &__img {
+    flex: 0 1 auto;
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
 
 @import "media";
