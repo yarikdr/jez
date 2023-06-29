@@ -13,7 +13,7 @@ body, * {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   height: 100%;
   overflow: hidden;
 }
@@ -57,6 +57,9 @@ body, * {
 }
 
 .header {
+  transition: all 0.7s ease;
+  position: fixed;
+  width: 100%;
   padding: 30px 0;
   &__inner {
     display: grid;
@@ -69,6 +72,10 @@ body, * {
     max-width: 130px;
   }
 
+  &-moving {
+    padding: 5px 0;
+    background-color: $paleOrange;
+  }
   // &__menu {}
 }
 

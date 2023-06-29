@@ -10,6 +10,18 @@ function burger(burgerSel, menuSel, breakpoint) {
   })
 }
 
+function watchScroll() {
+  const header = document.querySelector('.header')
+  window.addEventListener('scroll', () => {
+    if (window.scrollY) {
+      header.classList.add('header-moving')
+    } else {
+      header.classList.remove('header-moving')
+    }
+  })
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   burger('.burger', '.menu', 768)
+  watchScroll()
 })
