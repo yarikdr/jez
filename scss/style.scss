@@ -1,13 +1,60 @@
 @import "fonts", "null", "vars", "mixins";
 
-body {
+body, * {
   font-family: $primary;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .lock {
   overflow: hidden;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.orange {
+  color: $orange;
+}
+
+.title {
+  font-size: 48px;
+  line-height: calc(67.2 / 48 * 100%);
+  font-weight: 600;
+  color: $grey;
+}
+
+.text {
+  font-size: 16px;
+  line-height: calc(24 / 16 * 100%);
+  color: $grey;
+  font-weight: 400;
+}
+
+.btn {
+  padding: 14px 43px;
+  background-color: $orange;
+  color: $white;
+  border-radius: 100px;
+  border: 2px solid $orange;
+  transition: all 0.3s ease;
+  &:hover {
+    color: $orange;
+    background-color: $white;
+  }
+}
 // !styles for burger
 // .burger {
 //   display: none;
