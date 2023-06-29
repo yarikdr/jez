@@ -40,3 +40,25 @@
     }
   }
 }
+
+@mixin hoverFontWeight($c, $weight) {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: color 0.3s ease;
+  &::after {
+    content: attr(data-text);
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
+    font-weight: $weight;
+    color: $c;
+  }
+  &:hover {
+    font-weight: $weight;
+    color: $c;
+  }
+}
