@@ -170,4 +170,11 @@
       width: 100%;
     }
   }
+
+  .footer {
+    margin-top: 50px;
+    &__description {
+      margin-bottom: 20px;
+    }
+  }
 }

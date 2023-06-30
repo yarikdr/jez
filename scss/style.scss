@@ -12,6 +12,7 @@ body, * {
 
 .wrapper {
   display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -558,6 +559,113 @@ body, * {
       position: absolute;
       transform: translateX(-105%);
       top: 5px;
+    }
+  }
+}
+
+.footer {
+  margin-top: 152px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 212px;   
+  }
+
+  &__logo {
+    width: 124px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    color: $grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 67px;
+  }
+
+  &__copyright {
+    color: $black;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  &__menu {
+    flex: 0 1 187px;
+    font-size: 16px;
+    line-height: 150%;
+    *:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    span {
+      display: inline-block;
+      color: $orange;
+    }
+  }
+
+  &__item {
+    display: block;
+    color: $grey;
+    font-weight: 400;
+  }
+
+  &__get-in-touch {
+    flex: 0 1 237px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    span {
+      color: $orange;
+      font-weight: 600;
+      display: inline-block;
+    }
+    *:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__address, &__email, &__phone  {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    &::before {
+      color: $orange;
+      font-size: 24px;
+      margin-right: 10px;
+    }
+  }
+
+  // &__email {}
+
+  // &__phone {}
+
+  &__networks {
+    a {
+      color: $orange;
+      font-size: 26px;
+    }
+    a:not(:last-child) {
+      margin-right: 32px;
+    }
+    div {
+      margin-top: 20px;
+      color: $grey;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%; 
     }
   }
 }
